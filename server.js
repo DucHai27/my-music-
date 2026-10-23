@@ -240,8 +240,12 @@ app.get('/api/stream/:id', auth, async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
-// Express serves static files in local dev. Vercel serves public/ via its CDN.
+// Express serves static files locally. On Vercel, public/ is served by the CDN.
+// The root URL is handled by Express, so send browsers to the published HTML asset.
+// Do not add a vercel.json rewrite for '/': it can prevent the Express handler
+// from being reached without guaranteeing the public asset is selected.
 if (!process.env.VERCEL) app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.get('/', (_req, res) => res.redirect(302, '/index.html'));
 app.use('/api', (_req, res) => res.status(404).json({ error: 'Không tìm thấy API.' }));
 app.use((err, _req, res, _next) => {
   console.error(err);
