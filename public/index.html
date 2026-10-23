@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d18" />
+  <meta name="description" content="Sonora – thư viện âm nhạc riêng của bạn. Tải nhạc lên và nghe trên mọi thiết bị." />
+  <title>Sonora — Âm nhạc của riêng bạn</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="symbol-store" aria-hidden="true">
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m5 5 11 7-11 7z"/><path d="M19 5v14"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="m19 5-11 7 11 7z"/><path d="M5 5v14"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M4 7h3c5 0 5 10 10 10h3m-4-4 4 4-4 4M4 17h3c2 0 3-2 4-4m3-4c1-1 2-2 3-2h3m-4-4 4 4-4 4"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4zM15 9a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></symbol>
+    <symbol id="i-volume-off" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4zM16 9l5 6m0-6-5 6"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9M4 17l-1 4 4-1L19 8a2 2 0 0 0-3-3z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7M10 11v6m4-6v6"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M15 8l4 4-4 4M8 12h11"/></symbol>
+    <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/><path d="M12 4a8 8 0 0 1 8 8M4 12a8 8 0 0 1 8-8"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1z"/></symbol>
+  </svg>
+
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Sonora – trang chủ">
+        <span class="brand-mark"><svg class="icon"><use href="#i-music"/></svg></span>
+        <span>sonora<span class="brand-dot">.</span></span>
+      </a>
+      <div class="sidebar-group">
+        <div class="nav-caption">KHÁM PHÁ</div>
+        <button class="nav-item active" data-view="all"><svg class="icon"><use href="#i-home"/></svg><span>Thư viện của tôi</span></button>
+        <button class="nav-item" data-view="favorites"><svg class="icon"><use href="#i-heart"/></svg><span>Yêu thích</span></button>
+        <button class="nav-item" data-view="recent"><svg class="icon"><use href="#i-clock"/></svg><span>Mới tải lên</span></button>
+      </div>
+      <div class="sidebar-group sidebar-collection">
+        <div class="nav-caption">BỘ SƯU TẬP</div>
+        <div class="collection-mini"><div class="mini-art art-violet"><svg class="icon"><use href="#i-music"/></svg></div><div><strong>My Music</strong><span>Kho nhạc cá nhân</span></div></div>
+      </div>
+      <div class="sidebar-spacer"></div>
+      <div class="privacy-card"><span class="privacy-dot"></span><strong>Không gian riêng tư</strong><p>Nhạc của bạn được lưu trên server của chính bạn.</p></div>
+      <button id="logoutBtn" class="nav-item logout"><svg class="icon"><use href="#i-log-out"/></svg><span>Đăng xuất</span></button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark"><svg class="icon"><use href="#i-music"/></svg></span><strong>sonora<span class="brand-dot">.</span></strong></div>
+        <div class="searchbox"><svg class="icon"><use href="#i-search"/></svg><input id="searchInput" type="search" placeholder="Tìm bài hát, nghệ sĩ..." aria-label="Tìm bài hát, nghệ sĩ" autocomplete="off"/><span class="search-hint">⌘ K</span></div>
+        <div class="topbar-actions"><span class="topbar-note">Your personal sound space</span><button class="primary-btn upload-trigger" id="headerUpload"><svg class="icon"><use href="#i-upload"/></svg><span>Tải nhạc lên</span></button></div>
+      </header>
+
+      <div class="page-inner">
+        <section class="hero">
+          <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> KHÔNG GIAN ÂM NHẠC CỦA BẠN</div><h1>Âm nhạc hay.<br/><em>Theo cách của bạn.</em></h1><p>Gom những giai điệu yêu thích về một nơi. Tải lên một lần, lắng nghe ở bất cứ đâu.</p><button class="hero-button upload-trigger" id="heroUpload">Thêm bài hát đầu tiên <span>↗</span></button></div>
+          <div class="hero-visual" aria-hidden="true"><div class="halo halo-one"></div><div class="halo halo-two"></div><div class="floating-note note-one">♪</div><div class="floating-note note-two">♫</div><div class="vinyl-shadow"></div><div class="vinyl"><div class="vinyl-reflection"></div><div class="vinyl-center"><svg class="icon"><use href="#i-music"/></svg></div></div><div class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </section>
+
+        <section class="stat-row" aria-label="Thống kê thư viện">
+          <div class="stat-card"><span class="stat-icon violet"><svg class="icon"><use href="#i-music"/></svg></span><div><strong id="totalCount">0</strong><span>Bài hát</span></div></div>
+          <div class="stat-card"><span class="stat-icon coral"><svg class="icon"><use href="#i-heart"/></svg></span><div><strong id="favoriteCount">0</strong><span>Yêu thích</span></div></div>
+          <div class="stat-card"><span class="stat-icon blue"><svg class="icon"><use href="#i-disc"/></svg></span><div><strong id="storageSize">0 MB</strong><span>Dung lượng nhạc</span></div></div>
+        </section>
+
+        <section class="featured-section" id="featuredSection">
+          <div class="section-heading"><div><div class="section-kicker">NGHE GÌ HÔM NAY?</div><h2>Góc âm nhạc của bạn <span class="headline-spark">✳</span></h2></div><span class="section-subtext">Chọn một bài để bắt đầu</span></div>
+          <div class="featured-grid" id="featuredGrid"></div>
+        </section>
+
+        <section class="library-section">
+          <div class="section-heading library-heading"><div><div class="section-kicker">YOUR COLLECTION</div><h2 id="libraryTitle">Tất cả bài hát</h2></div><div class="library-actions"><span id="visibleCount">0 bài hát</span><select id="sortSelect" aria-label="Sắp xếp"><option value="newest">Mới nhất</option><option value="title">Tên A → Z</option><option value="artist">Nghệ sĩ A → Z</option></select></div></div>
+          <div class="table-head"><span>#</span><span>BÀI HÁT</span><span>NGÀY THÊM</span><span class="col-actions">TÙY CHỌN</span></div>
+          <div id="songList" class="song-list"></div>
+          <div id="emptyState" class="empty-state" hidden><div class="empty-illustration"><svg class="icon"><use href="#i-music"/></svg></div><h3>Thư viện đang đợi giai điệu đầu tiên</h3><p>Thêm các file nhạc từ máy tính để tạo không gian âm nhạc dành riêng cho bạn.</p><button class="primary-btn upload-trigger" id="emptyUpload"><svg class="icon"><use href="#i-upload"/></svg>Chọn file nhạc</button></div>
+        </section>
+        <footer class="page-footer">MADE FOR THE LOVE OF MUSIC <span>✦</span> SONORA</footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="player" id="player">
+    <div class="now-playing"><div class="player-art cover art-0" id="playerArt"><svg class="icon"><use href="#i-music"/></svg></div><div class="playing-info"><strong id="playerTitle">Chưa phát bài hát</strong><span id="playerArtist">Chọn một bài trong thư viện</span></div><button id="playerFavorite" class="icon-btn player-heart" aria-label="Thêm vào yêu thích" disabled><svg class="icon"><use href="#i-heart"/></svg></button></div>
+    <div class="player-center"><div class="transport"><button class="icon-btn small" id="shuffleBtn" aria-label="Phát ngẫu nhiên" title="Phát ngẫu nhiên"><svg class="icon"><use href="#i-shuffle"/></svg></button><button class="icon-btn" id="prevBtn" aria-label="Bài trước"><svg class="icon"><use href="#i-prev"/></svg></button><button class="play-button" id="playBtn" aria-label="Phát" disabled><svg class="icon" id="playIcon"><use href="#i-play"/></svg></button><button class="icon-btn" id="nextBtn" aria-label="Bài tiếp theo"><svg class="icon"><use href="#i-next"/></svg></button><button class="icon-btn small" id="repeatBtn" aria-label="Chế độ lặp" title="Không lặp"><svg class="icon"><use href="#i-repeat"/></svg><span class="repeat-one">1</span></button></div><div class="scrubber"><span id="currentTime">0:00</span><input type="range" id="seekSlider" min="0" max="1000" value="0" aria-label="Tua bài hát"/><span id="duration">0:00</span></div></div>
+    <div class="player-right"><button id="muteBtn" class="icon-btn" aria-label="Tắt âm lượng"><svg class="icon"><use href="#i-volume"/></svg></button><input id="volumeSlider" type="range" min="0" max="100" value="80" aria-label="Âm lượng"/><div class="quality-pill"><span></span> AUDIO</div></div>
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+
+  <div class="modal-backdrop" id="uploadModal" hidden>
+    <div class="modal-panel upload-panel" role="dialog" aria-modal="true" aria-labelledby="uploadHeading">
+      <div class="modal-header"><div><div class="section-kicker">GROW YOUR LIBRARY</div><h2 id="uploadHeading">Tải nhạc lên</h2></div><button class="icon-btn close-modal" data-close="uploadModal" aria-label="Đóng"><svg class="icon"><use href="#i-x"/></svg></button></div>
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Chọn file âm thanh để tải lên"><div class="upload-orb"><svg class="icon"><use href="#i-upload"/></svg></div><h3>Kéo thả file nhạc vào đây</h3><p>hoặc <span>nhấn để chọn file từ thiết bị</span></p><small>MP3, M4A, WAV, FLAC, OGG, OPUS, AAC, WEBM • tối đa 150 MB/file theo mặc định</small></div>
+      <input type="file" id="fileInput" accept=".mp3,.m4a,.wav,.flac,.ogg,.opus,.aac,.webm,audio/*" multiple hidden />
+      <div class="upload-status" id="uploadStatus" aria-live="polite"></div>
+      <div class="modal-foot"><span>Nhạc được lưu trên Vercel Blob (ai có link file trực tiếp có thể mở).</span><button class="secondary-btn close-modal" data-close="uploadModal">Xong</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="editModal" hidden>
+    <div class="modal-panel edit-panel" role="dialog" aria-modal="true" aria-labelledby="editHeading">
+      <div class="modal-header"><div><div class="section-kicker">TRACK DETAILS</div><h2 id="editHeading">Chỉnh sửa bài hát</h2></div><button class="icon-btn close-modal" data-close="editModal" aria-label="Đóng"><svg class="icon"><use href="#i-x"/></svg></button></div>
+      <form id="editForm"><label for="editTitle">Tên bài hát</label><input id="editTitle" name="title" maxlength="120" required /><label for="editArtist">Nghệ sĩ</label><input id="editArtist" name="artist" maxlength="120" required /><div class="edit-actions"><button type="button" class="secondary-btn close-modal" data-close="editModal">Hủy</button><button class="primary-btn" type="submit">Lưu thay đổi</button></div></form>
+    </div>
+  </div>
+
+  <div class="auth-screen" id="authScreen">
+    <div class="auth-glow"></div><div class="auth-card"><div class="auth-logo"><span class="brand-mark"><svg class="icon"><use href="#i-music"/></svg></span><span>sonora<span class="brand-dot">.</span></span></div><div class="auth-badge">✦ YOUR PRIVATE LISTENING ROOM</div><h1>Âm nhạc của bạn.<br/><em>Ở bất cứ đâu.</em></h1><p>Đăng nhập để nghe và quản lý kho nhạc cá nhân của bạn trên mọi thiết bị.</p><form id="loginForm"><label for="passwordInput">MẬT KHẨU TRUY CẬP</label><input type="password" id="passwordInput" placeholder="Nhập mật khẩu" autocomplete="current-password" required /><button class="primary-btn" type="submit" id="loginBtn">Vào thư viện <span>↗</span></button><div id="loginError" class="login-error" role="alert"></div></form><div class="auth-foot"><svg class="icon"><use href="#i-heart"/></svg> Một không gian âm nhạc chỉ dành cho bạn</div></div>
+  </div>
+
+  <div class="toast-stack" id="toasts" aria-live="polite"></div>
+  <script src="/app.bundle.js" defer></script>
+</body>
+</html>
